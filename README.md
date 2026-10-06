@@ -81,6 +81,7 @@ electricity/
 ├── manage.py
 ├── db.sqlite3
 └── README.md
+```text
 
 💰 Electricity Bill Calculation
 
