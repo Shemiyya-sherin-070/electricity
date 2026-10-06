@@ -123,7 +123,6 @@ Django Admin
 ```text
 /admin/
 ```
-
 ## 🔄 Application Flow
 
 ```text
