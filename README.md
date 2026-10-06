@@ -81,9 +81,9 @@ electricity/
 ├── manage.py
 ├── db.sqlite3
 └── README.md
-```text
 
-💰 Electricity Bill Calculation
+
+##💰 Electricity Bill Calculation
 
 The application uses the following unit slabs:
 
@@ -95,7 +95,7 @@ Above 500	₹6.00/unit for units above 500	₹150
 
 The calculation is progressive, meaning each slab is calculated separately.
 
-Tax
+### Tax
 
 A 5% tax is applied to the subtotal.
 
@@ -105,7 +105,7 @@ Tax = Subtotal × 5%
 
 Total Bill = Subtotal + Tax
 
-📊 Usage Messages
+### 📊 Usage Messages
 
 The application displays a message based on electricity consumption:
 
@@ -114,7 +114,7 @@ Units	Usage Message
 101 - 300	Normal Usage
 Above 300	High Usage
 
-🔌 API Endpoints
+##🔌 API Endpoints
 Calculate and Save Bill
 POST /api/calculate-bill/
 Get Saved Bills
@@ -127,7 +127,7 @@ Django Admin
 
 The Django Admin Panel can be used to view, search, and filter saved electricity bills.
 
-🔄 Application Flow
+## 🔄 Application Flow
 User enters customer name and units
                 ↓
         JavaScript validates input
@@ -143,7 +143,7 @@ User enters customer name and units
        API returns bill details
                 ↓
        Frontend displays the bill
-🗄️ Database
+##🗄️ Database
 The project uses SQLite for storing electricity bill records.
 
 The ElectricityBill model stores:
