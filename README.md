@@ -81,53 +81,52 @@ electricity/
 ├── manage.py
 ├── db.sqlite3
 └── README.md
+```
+## 💰 Electricity Bill Calculation
 
-
-##💰 Electricity Bill Calculation
-
-The application uses the following unit slabs:
-
-Units Consumed	Energy Rate	Fixed Charge
-0 - 100	₹1.50/unit	₹50
-101 - 200	₹2.50/unit for units above 100	₹75
-201 - 500	₹4.00/unit for units above 200	₹100
-Above 500	₹6.00/unit for units above 500	₹150
-
-The calculation is progressive, meaning each slab is calculated separately.
+The electricity bill is calculated using progressive unit slabs.
+| Units Consumed | Energy Rate | Fixed Charge |
+|---|---:|---:|
+| 0–100 | ₹1.50/unit | ₹50 |
+| 101–200 | ₹2.50/unit for units above 100 | ₹75 |
+| 201–500 | ₹4.00/unit for units above 200 | ₹100 |
+| Above 500 | ₹6.00/unit for units above 500 | ₹150 |
 
 ### Tax
 
 A 5% tax is applied to the subtotal.
-
+```text
 Subtotal = Energy Charge + Fixed Charge
-
 Tax = Subtotal × 5%
-
 Total Bill = Subtotal + Tax
+```
 
 ### 📊 Usage Messages
 
 The application displays a message based on electricity consumption:
+| Units |	Usage Message |
+|---|---|
+| 0 - 100 |	Low Usage |
+| 101 - 300 |	Normal Usage |
+| Above 300	| High Usage |
 
-Units	Usage Message
-0 - 100	Low Usage
-101 - 300	Normal Usage
-Above 300	High Usage
-
-##🔌 API Endpoints
+## 🔌 API Endpoints
 Calculate and Save Bill
+```text
 POST /api/calculate-bill/
+```
 Get Saved Bills
+```text
 GET /api/bills/
-
-This endpoint returns the saved electricity bill records.
-
+```
 Django Admin
+```text
 /admin/
-
-The Django Admin Panel can be used to view, search, and filter saved electricity bills.
+```
 
 ## 🔄 Application Flow
+
+```text
 User enters customer name and units
                 ↓
         JavaScript validates input
@@ -143,17 +142,4 @@ User enters customer name and units
        API returns bill details
                 ↓
        Frontend displays the bill
-##🗄️ Database
-The project uses SQLite for storing electricity bill records.
-
-The ElectricityBill model stores:
-
-Customer name
-Units consumed
-Energy charge
-Fixed charge
-Subtotal
-Tax
-Total bill
-Usage message
-Created date and time
+```
